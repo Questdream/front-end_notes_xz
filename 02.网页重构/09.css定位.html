@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 1000px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid #0f0;
+        }
+        .pos{
+            position: relative; /*元素变为绝对定位元素*/
+            top: 50px;
+            left: 50px;
+        }
+        .container{
+            width: 300px;
+            height: 300px;
+            border: 1px solid blue;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        .box1{
+            border: blue 4px solid;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 一个元素可以设置多个class属性值，用空格分开即可 -->
+    <div class="box">1</div>
+    <div class="box pos">2</div>
+    <div class="box">3</div>
+
+    <div class="container">
+        <div class="box1"></div>
+    </div>
+</body>
+</html>
