@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid #00f;
+            height: 200px;
+            display: flex;
+            justify-content: center;/*控制所有flex项目水平方向的排列位置
+            align-items: center;/*控制所有flex项目的垂直方向的排列位置*/
+        }
+        .box{
+            height: 50px;
+            border: 1px solid #f00;
+        }
+        .item1{
+            flex: 1; /*控制flex项目的长度比例*/
+        }
+        .item2{
+            flex: 1;
+            align-self: flex-start; /*控制此flex项目的垂直方向的排列位置*/
+        }
+        .item3{
+            flex: 1;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="box item1">1</div>
+        <div class="box item2">2</div>
+        <div class="box item3">3</div>
+    </div>
+</body>
+</html>
