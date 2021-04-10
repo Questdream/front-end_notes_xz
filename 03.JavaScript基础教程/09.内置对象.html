@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="number" >
+    <button id="guess">猜数字</button>
+    <h1></h1>
+    <script>
+        var target = Math.floor(Math.random()*100+1); // 生成1~100随机数
+        var btn = document.querySelector("#guess");
+        var number = document.querySelector("#number");
+        var h1 = document.querySelector("h1");
+        btn.onclick = function(){
+            var value = Number(number.value);
+            if(value>target){
+                alert("大于结果");
+            }else if(value<target){
+                alert("小于结果");
+            }else if(value==target){
+                alert("回答正确");
+            }else{
+                alert("请输入正确的数字格式")
+            }
+        }
+        // 网页的动态时间
+        function getTime(){
+            var dateNow = new Date();
+            var hours = dateNow.getHours();
+            var minutus = dateNow.getMinutes();
+            var seconds = dateNow.getSeconds();
+            var strTimeNow = hours+":"+minutus+":"+seconds
+            h1.innerHTML = strTimeNow;
+        }
+        getTime();
+        setInterval(getTime,1000);
+    </script>
+</body>
+</html>
