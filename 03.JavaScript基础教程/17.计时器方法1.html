@@ -1,0 +1,30 @@
+<!-- 实现网页一定时间后跳转 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><span class="seconds">5</span>秒后跳转百度</p>
+    <button>停止跳转</button>
+    <script>
+        var seconds = document.querySelector(".seconds")
+        var btn = document.querySelector("button")
+        var t = setInterval(function(){
+            var s = Number(seconds.innerHTML);
+            s--;
+            seconds.innerHTML = s;
+            if(s>0){
+                    btn.onclick = function(){
+                        clearInterval(t);
+                    }
+            }else if(s===0){
+                location.href = "http://baidu.com" // 可以实现页面跳转
+            }
+        },1000)
+    </script>
+</body>
+</html>

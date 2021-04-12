@@ -1,0 +1,42 @@
+<!-- 实现计数功能，有开始和停止计数 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>0</h1>
+    <button id="start">开始计数</button>
+    <button id="stop">停止计数</button>
+    <button id="reset">重置</button>
+    <script>
+        // 获取元素节点
+        var btnStart = document.querySelector("#start");
+        var btnStop = document.querySelector("#stop");
+        var btnReset = document.querySelector("#reset")
+        var h1 = document.querySelector("h1");
+        var t;
+        // 绑定点击事件
+        btnStart.onclick = function(){
+            clearInterval(t);
+            
+            t = setInterval(function(){
+                var number = Number(h1.innerHTML);
+                number++;
+                h1.innerHTML = number;
+            },300);
+        }
+        btnStop.onclick = function(){
+            clearInterval(t);
+        }
+        btnReset.onclick = function(){
+            h1.innerHTML = 0;
+            clearInterval(t)
+        }
+    </script>
+</body>
+</html>
