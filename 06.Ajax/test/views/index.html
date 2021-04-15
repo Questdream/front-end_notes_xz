@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <button>获取数据</button>
+    <script>
+        document.querySelector("button").onclick = function(){
+            // let xhr = new XMLHttpRequest();
+            // xhr.open("get", "/data");//第一个参数为请求方法，第二个是路径
+            // xhr.send();
+            // xhr.onreadystatechange = function(){
+            //     if(xhr.readyState ===4 && xhr.status === 200){
+            //         alert(xhr.responseText)
+            //     }
+            // }
+                // myajax("get","/data",(res) => {
+                //     alert(res)
+                // })
+                myOwnajax("get","/data").then( res => {
+                    alert(res);
+                })
+        }
+        // 回调函数封装返回异步数据
+        function myajax(method,url,next){
+            let xhr = new XMLHttpRequest();
+            xhr.open(method, url);//第一个参数为请求方法，第二个是路径
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState ===4 && xhr.status === 200){
+                    next(xhr.responseText)
+                }
+            }
+        }
+        // 通过promise封装返回异步数据，返回promise对象，使用resolve返回数据，通过then来接受数据
+        function myOwnajax(method,url){
+            return new Promise(function(resolve){
+                let xhr = new XMLHttpRequest();
+                xhr.open(method, url);//第一个参数为请求方法，第二个是路径
+                xhr.send();
+                xhr.onreadystatechange = function(){
+                if(xhr.readyState ===4 && xhr.status === 200){
+                    resolve(xhr.responseText)
+                }
+            }
+            })
+
+           
+        }
+    </script>
+</body>
+</html>
