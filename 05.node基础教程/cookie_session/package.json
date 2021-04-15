@@ -10,8 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "koa": "^2.13.1",
+    "koa-parser": "^1.0.8",
     "koa-router": "^10.0.0",
+    "koa-session": "^6.2.0",
     "koa-views": "^7.0.1",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "parser": "^0.1.4"
   }
 }
