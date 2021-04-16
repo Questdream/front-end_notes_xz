@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="get">查询数据</button>
+    <button class="post">添加数据</button>
+    <button class="put">修改数据</button>
+    <button class="delete">删除数据</button>
+    <!-- <script src="/js/axios.min.js"></script> -->
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        //get方法返回值是一个promise对象
+        // axios.get("/fruits").then( res => {
+        //     console.log(res.data)
+        // })
+
+        // 使用jQuery完成增删改查
+        $(".get").click(function(){
+            $.ajax({
+                url:"/fruits",
+                type:"get"
+            }).done(res => {
+                console.log(res,"jQuery的ajax方法")
+            })
+        })
+
+        //使用axios完成增删改查
+        // // 绑定查询按钮
+        // document.querySelector(".get").onclick = function(){
+        //     axios.get("/fruits").then( res => {
+        //         console.log(res.data)
+        //     })
+        // }
+        // // 绑定添加按钮
+        // document.querySelector(".post").onclick = function(){
+        //     axios.post("/fruits", {
+        //         fruit:"草莓"  //给后台传数据
+        //     }).then( res => {
+        //         console.log(res.data)
+        //     })
+        // }
+
+        //  // 绑定修改按钮
+        //  document.querySelector(".put").onclick = function(){
+        //     axios.put("/fruits/1", {//注意这个路径前后台写法不一样
+        //         fruit:"西瓜"  //给后台传数据
+        //     }).then( res => {
+        //         console.log(res.data)
+        //     })
+        // }
+        //  // 绑定删除按钮
+        //  document.querySelector(".delete").onclick = function(){
+        //     axios.delete("/fruits/0").then( res => {
+        //         console.log(res.data)
+        //     })
+        // }
+
+    </script>
+</body>
+</html>
