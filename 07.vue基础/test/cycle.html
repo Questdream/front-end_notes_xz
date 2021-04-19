@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var app =new Vue({
+            el:"#app",
+            data:{
+                message:"vue组件的生命周期"
+            },
+            //组件被创建之前
+            beforeCreate(){
+                console.group("beforeCreate组件创建之前状态")
+                console.log("%C%S","color:red","el:"+this.$el);
+                console.log("%C%S","color:red","data:"+this.$data);
+                console.log("%C%S","color:red","message:"+this.message);
+            },
+            // 组件创建完毕
+            created(){
+                console.group("created组件创建完毕状态")
+                console.log("%C%S","color:red","el:"+this.$el);
+                console.log("%C%S","color:red","data:"+this.$data);
+                console.log("%C%S","color:red","message:"+this.message);
+            },
+            // 组件挂载之前
+            beforeMount(){
+                console.group("beforeMount组件挂载之前状态")
+                console.log("%C%S","color:red","el:"+this.$el);
+                console.log(this.$el);
+                console.log("%C%S","color:red","data:"+this.$data);
+                console.log("%C%S","color:red","message:"+this.message);
+            },
+            // 组件挂载完毕
+            mounted(){
+                console.group("mount组件挂载完毕状态")
+                console.log("%C%S","color:red","el:"+this.$el);
+                console.log(this.$el);
+                console.log("%C%S","color:red","data:"+this.$data);
+                console.log("%C%S","color:red","message:"+this.message);
+            },
+            // 组件更新之前
+           beforeUpdate(){
+                console.group("beforeUpdata组件更新之前状态")
+                console.log("%C%S","color:red","el:"+this.$el);
+                console.log(this.$el);
+                console.log("%C%S","color:red","data:"+this.$data);
+                console.log("%C%S","color:red","message:"+this.message);
+            },
+            // 组件跟新完毕
+           updated(){
+                console.group("updated组件更新完毕状态")
+                console.log("%C%S","color:red","el:"+this.$el);
+                console.log(this.$el);
+                console.log("%C%S","color:red","data:"+this.$data);
+                console.log("%C%S","color:red","message:"+this.message);
+            },
+            // 组件销毁之前
+            beforeDestroy(){
+                console.group("beforeDestroy组件销毁之前状态")
+                console.log("%C%S","color:red","el:"+this.$el);
+                console.log(this.$el);
+                console.log("%C%S","color:red","data:"+this.$data);
+                console.log("%C%S","color:red","message:"+this.message);
+            },
+            // 组件销毁完毕
+            destroyed(){
+                console.group("destroyed组件销毁完毕状态")
+                console.log("%C%S","color:red","el:"+this.$el);
+                console.log(this.$el);
+                console.log("%C%S","color:red","data:"+this.$data);
+                console.log("%C%S","color:red","message:"+this.message);
+            }
+
+        })
+    </script>
+</body>
+</html>
