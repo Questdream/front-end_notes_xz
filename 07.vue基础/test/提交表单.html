@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <form @submit.prevent="postData">
+            <label for="">用户名：</label>
+            <input type="text" v-model="formData.username">
+            <label for="">密码：</label>
+            <input type="password" v-model="formData.password">
+            <button>提交数据</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        new Vue({
+            el:".app",
+            data:{
+                formData:{
+                    username:"",
+                    password:""
+                }
+            },
+            methods:{
+                postData(){
+                    console.log(this.formData)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
